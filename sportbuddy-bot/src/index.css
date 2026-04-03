@@ -1,0 +1,64 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;700&display=swap');
+
+/* Import Tailwind v4 */
+@import "tailwindcss";
+
+/* Theme definitions natively in v4 */
+@theme {
+  --color-sport-dark: #0a0a0a;
+  --color-sport-gray: #18181b;
+  --color-sport-neon: #39ff14;
+  --color-sport-lime: #ccff00;
+  --font-sport: 'Oswald', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+
+@layer base {
+  body {
+    background-color: var(--color-sport-dark);
+    color: #e5e7eb; /* text-gray-200 */
+    font-family: var(--font-sans);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sport);
+  }
+}
+
+/* Custom Scrollbar untuk vibe Sporty & Dark */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-sport-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sport-neon);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-sport-lime);
+}
+
+/* Custom Utility animations yang dipakai di React classNames */
+@layer components {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
